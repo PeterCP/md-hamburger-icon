@@ -1,0 +1,132 @@
+/**
+ * Usage:
+ *   <a class="md-hamburger-btn" ... >
+ *       <span class="md-hamburger-icon">
+ *           <span></span>
+ *       </span>
+ *   </a>
+ */
+
+.md-hamburger-btn {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.md-hamburger-icon {
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+}
+
+.md-hamburger-icon span {
+  display: block;
+  top: 40%;
+  width: 100%;
+  height: 20%;
+  background: #eee;
+  border-radius: 1px;
+  position: relative;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+.md-hamburger-icon span:before,
+.md-hamburger-icon span:after {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  border-radius: 1px;
+  left: 0;
+  content: '';
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+.md-hamburger-icon span:before {
+  bottom: 200%;
+}
+.md-hamburger-icon span:after {
+  top: 200%;
+}
+
+.md-hamburger-icon.open span {
+  animation-name: md-hamburger-icon-open--slide-mid;
+  animation-fill-mode: forwards;
+}
+.md-hamburger-icon.open span:before {
+  animation-name: md-hamburger-icon-open--slide-top;
+  animation-fill-mode: forwards;
+}
+.md-hamburger-icon.open span:after {
+  animation-name: md-hamburger-icon-open--slide-bot;
+  animation-fill-mode: forwards;
+}
+.md-hamburger-icon.closed span {
+  animation-name: md-hamburger-icon-closed--slide-mid;
+}
+.md-hamburger-icon.closed span:before {
+  animation-name: md-hamburger-icon-closed--slide-top;
+}
+.md-hamburger-icon.closed span:after {
+  animation-name: md-hamburger-icon-closed--slide-bot;
+}
+
+@keyframes md-hamburger-icon-open--slide-mid {
+  0% {
+  }
+  100% {
+    transform: rotate(180deg);
+    border-radius: 2px;
+  }
+}
+@keyframes md-hamburger-icon-open--slide-top {
+  0% {
+  }
+  100% {
+    transform: rotate(45deg);
+    margin: 3% 37%;
+    width: 75%;
+    bottom: 140%;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+}
+@keyframes md-hamburger-icon-open--slide-bot {
+  0% {
+  }
+  100% {
+    transform: rotate(-45deg);
+    margin: 3% 37%;
+    width: 75%;
+    top: 140%;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+}
+
+@keyframes md-hamburger-icon-closed--slide-mid {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+  }
+}
+@keyframes md-hamburger-icon-closed--slide-top {
+  0% {
+    transform: rotate(45deg);
+    margin: 3% 37%;
+    width: 75%;
+  }
+  100% {
+  }
+}
+@keyframes md-hamburger-icon-closed--slide-bot {
+  0% {
+    transform: rotate(-45deg);
+    margin: 3% 37%;
+    width: 75%;
+  }
+  100% {
+  }
+}

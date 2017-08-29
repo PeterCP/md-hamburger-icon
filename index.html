@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Material Design Hamburger</title>
+  <link rel="stylesheet" type="text/css" href="md-hamburger.css">
+  <link rel="stylesheet" type="text/css" href="page.css">
+</head>
+<body>
+
+<section class="wrapper">
+
+  <section style="padding: 20px;">
+    <button class="md-hamburger">
+        <span></span>
+    </button>
+  </section>
+
+  <section class="menu menu--off">
+    <div>Android's Material Design Hamburger Animation</div>
+    <div>Adapted for the web by <a href="https://swirlycheetah.com" target="_blank">Chris Wheatley</a></div>
+    <div><a href="https://github.com/swirlycheetah/material-design-hamburger" target="_blank">Available on GitHub</a></div>
+    <div><a href="https://twitter.com/swirlycheetah" target="_blank">Follow me on Twitter @swirlycheetah</a></div>
+  </section>
+  
+</section>
+
+<script type="text/javascript" src="md-hamburger.js"></script>
+<script type="text/javascript">
+  document.querySelector('.md-hamburger').addEventListener('click', function () {
+    document.querySelector('body').classList.toggle('background--blur');
+    document.querySelector('.menu').classList.toggle('menu--on');
+  });
+</script>
+
+</body>
+</html>
